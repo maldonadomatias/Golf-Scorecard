@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Scorecard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/users.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+
+<section class="background">
+<section class="showcase">
+    <header>
+      <h2 class="logo">GOLF SCORECARD</h2>
+      <div class="toggle"></div>
+    </header>
+    <!-- <div class="overlay"></div> -->
+    <div class="row">
+        <div class="col-12">
+            <div class="text ">
+                <h2 class="mb-4">LOGIN</h2> 
+       
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="container loginForm" id="cardLog">
+                <div class="login-content">
+                    <div class="cardForm">
+                        <div class="card-bodyForm">
+                        <form action="/login" method="POST" class="validated-form" novalidate>
+                            <div class="mb-3">
+                                <label class="form-label-login" for="username">Username</label>
+                                <input class="form-control-login" type="text" id="username" name="username" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                        
+                            <div class="mb-3">
+                                <label class="form-label-login" for="password">Password</label>
+                                <input class="form-control-login" type="password" id="password" name="password" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                            </div>
+                            <a href="/forgot">Forgot Password?</a>
+                            <button class="btn btn-login">Login</button>
+                        </form>
+                     </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+     
+
+
+    <ul class="social">
+      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+  <div class="menu">
+    <ul>
+            <!-- <a class="nav-link" href="/campgrounds">Destinos</a> -->
+            <a class="nav-link" href="/">Home</a>
+            <% if(!currentUser) { %>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Registrarse</a>
+            <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
+    </ul>
+  </div>
+
+            
+
+        <footer class="mt-auto text-black-50 mx-auto" style="display: flex;">
+            <p>&copy; Golf Scorecard 2021</p>
+        </footer>
+
+
+    </div>
+</section>
+
+    <script src="/js/home.js"></script>
+    <script src="/js/users.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Scorecard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/score.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+
+<section class="background">
+<section class="showcase">
+    <header>
+      <h2 class="logo">Playing at:</h2>
+      <div class="toggle"></div>
+    </header>
+ 
+
+<!-- 
+    <div id="scoreHeader">
+        <h1 class="col-sm-9" id="heading">Golf Course</h1>
+        <div class="col-sm-3">
+            <button type="button" class="btn btn-primary btn-sm" id="player1button">Player 1</button>
+            <button type="button" class="btn btn-primary btn-sm" id="player2button">Player 2</button>
+            <button type="button" class="btn btn-primary btn-sm" id="inputbutton">Add Players</button>
+        </div>
+    </div> -->
+
+
+<div class="all">
+
+    <div class="col-12">
+        <div id="inputDetails" class="display">
+            <form>
+                <div class="form-group">
+                    <label for="inputCourse">Golf Course</label>
+                    <input id="inputCourse" class="form-control" type="text" placeholder="Golf Course">
+                </div>
+                <div class="form-group">
+                    <label for="inputPlayerOne">Player One</label>
+                    <input id="inputPlayerOne" class="form-control" type="text" placeholder="Player 1">
+                </div>
+                <div class="form-group">
+                    <label for="inputPlayerTwo">Player Two</label>
+                    <input id="inputPlayerTwo" class="form-control" type="text" placeholder="Player 2">
+                </div>
+            </form>
+            <button type="button" class="btn btn-danger mt-3" id="closeAlert" aria-label="Close">Close</button>
+        </div>
+    </div>
+
+
+      <div class="row">
+                    <div class="col-12">
+                        <div id="scoreHeader">
+                            <h2 class="col-sm-9" class="logo" id="heading">Golf Course</h2>
+                            <div class="col-sm-3">
+                                <button type="button" class="btn btn-primary btn-sm" id="player1button">Player 1</button>
+                                <button type="button" class="btn btn-primary btn-sm" id="player2button">Player 2</button>
+                                <button type="button" class="btn btn-primary btn-sm" id="inputbutton">Add Players</button>
+                            </div>
+                        </div> 
+                    </div>
+
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div id="scoreBody">
+                        <div id="scoreBody1" class="container">
+                            <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th scope="col"><p class="main">Hole</p></th>
+                                    <th scope="col"><p class="main">Par</p></th>
+                                    <th scope="col"><p class="main">Score</p></th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+        
+                                  <tr>
+                                    <th scope="row">1</th>
+        
+                                    <td class="dropdown">
+        
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole1" name="a1" value="3">
+                                        <label for="p1par3hole1">3</label>
+                                    
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole1" name="a1" value="4">
+                                        <label for="p1par4hole1">4</label>
+                                        
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole1" name="a1" value="5">
+                                        <label for="p1par5hole1">5</label> 
+                                    </td>
+        
+                                    <td>
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty1" type="number" min="1"> 
+                                    </td>
+                                    
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole2" name="a2" value="3">
+                                        <label for="p1par3hole2">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole2" name="a2" value="4">
+                                        <label for="p1par4hole2">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole2" name="a2" value="5">
+                                        <label for="p1par5hole2">5</label>
+                                    </td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty2" type="number" min="1"> 
+                                    </td>
+                                  
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole3" name="a3" value="3">
+                                        <label for="p1par3hole3">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole3" name="a3" value="4">
+                                        <label for="p1par4hole3">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole3" name="a3" value="5">
+                                        <label for="p1par5hole3">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty3" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">4</th>
+                                    <td>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole4" name="a4" value="3">
+                                        <label for="p1par3hole4">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole4" name="a4" value="4">
+                                        <label for="p1par4hole4">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole4" name="a4" value="5">
+                                        <label for="p1par5hole4">5</label></td>
+                                    <td> 
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty4" type="number" min="1"> 
+                                        </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">5</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole5" name="a5" value="3">
+                                        <label for="p1par3hole5">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole5" name="a5" value="4">
+                                        <label for="p1par4hole5">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole5" name="a5" value="5">
+                                        <label for="p1par5hole5">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty5" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">6</th>
+                                    <td>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole6" name="a6" value="3">
+                                        <label for="p1par3hole6">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole6" name="a6" value="4">
+                                        <label for="p1par4hole6">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole6" name="a6" value="5">
+                                        <label for="p1par5hole6">5</label>
+                                    </td>
+                                    <td>  <input onblur="findTotal()" class="score" name="qty" id="qty6" type="number" min="1"> </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">7</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole7" name="a7" value="3">
+                                        <label for="p1par3hole7">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole7" name="a7" value="4">
+                                        <label for="p1par4hole7">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole7" name="a7" value="5">
+                                        <label for="p1par5hole7">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty7" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">8</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole8" name="a8" value="3">
+                                        <label for="p1par3hole8">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole8" name="a8" value="4">
+                                        <label for="p1par4hole8">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole8" name="a8" value="5">
+                                        <label for="p1par5hole8">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty8" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">9</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole9" name="a9" value="3">
+                                        <label for="p1par3hole9">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole9" name="a9" value="4">
+                                        <label for="p1par4hole9">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole9" name="a9" value="5">
+                                        <label for="p1par5hole9">5</label></td>
+                                    <td> 
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty9" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">10</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole10" name="a10" value="3">
+                                        <label for="p1par3hole10">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole10" name="a10" value="4">
+                                        <label for="p1par4hole10">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole10" name="a10" value="5">
+                                        <label for="p1par5hole10">5</label></td>
+                                    <td> 
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty10" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">11</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole11" name="a11" value="3">
+                                        <label for="p1par3hole11">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole11" name="a11" value="4">
+                                        <label for="p1par4hole11">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole11" name="a11" value="5">
+                                        <label for="p1par5hole11">5</label></td>
+                                    <td> 
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty11" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">12</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole12" name="a12" value="3">
+                                        <label for="p1par3hole12">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole12" name="a12" value="4">
+                                        <label for="p1par4hole12">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole12" name="a12" value="5">
+                                        <label for="p1par5hole12">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty12" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">13</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole13" name="a13" value="3">
+                                        <label for="p1par3hole13">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole13" name="a13" value="4">
+                                        <label for="p1par4hole13">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole13" name="a13" value="5">
+                                        <label for="p1par5hole13">5</label></td>
+                                    <td> 
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty13" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">14</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole14" name="a14" value="3">
+                                        <label for="p1par3hole14">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole14" name="a14" value="4">
+                                        <label for="p1par4hole14">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole14" name="a14" value="5">
+                                        <label for="p1par5hole14">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty14" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">15</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole15" name="a15" value="3">
+                                        <label for="p1par3hole15">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole15" name="a15" value="4">
+                                        <label for="p1par4hole15">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole15" name="a15" value="5">
+                                        <label for="p1par5hole15">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty15" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">16</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole16" name="a16" value="3">
+                                        <label for="p1par3hole16">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole16" name="a16" value="4">
+                                        <label for="p1par4hole16">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole16" name="a16" value="5">
+                                        <label for="p1par5hole16">5</label></td>
+                                    <td> 
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty16" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">17</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole17" name="a17" value="3">
+                                        <label for="p1par3hole17">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole17" name="a17" value="4">
+                                        <label for="p1par4hole17">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole17" name="a17" value="5">
+                                        <label for="p1par5hole17">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty17" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                  <tr>
+                                    <th scope="row">18</th>
+                                    <td><input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par3hole18" name="a18" value="3">
+                                        <label for="p1par3hole18">3</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par4hole18" name="a18" value="4">
+                                        <label for="p1par4hole18">4</label>
+                                        <input type="radio" onclick="displayRadioValue()" class="r1"  id="p1par5hole18" name="a18" value="5">
+                                        <label for="p1par5hole18">5</label></td>
+                                    <td>  
+                                        <input onblur="findTotal()" class="score" name="qty" id="qty18" type="number" min="1"> 
+                                    </td>
+                                  </tr>
+        
+                                </tbody>
+                              </table>
+                           
+                           
+                            </div>
+
+                            <!-- Scorebody 2 -->
+
+                            <div id="scoreBody2" class="container display">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col"><p class="main">Hole</p></th>
+                                        <th scope="col"><p class="main">Par</p></th>
+                                        <th scope="col"><p class="main">Score</p></th>
+                                        
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+            
+                                      <tr>
+                                        <th scope="row">1</th>
+            
+                                        <td class="dropdown">
+            
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole1" name="a1" value="3">
+                                            <label for="p2par3hole1">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole1" name="a1" value="4">
+                                            <label for="p2par4hole1">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole1" name="a1" value="5">
+                                            <label for="p2par5hole1">5</label> 
+                                        </td>
+            
+                                        <td>
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty1" type="number" min="1"> 
+                                        </td>
+                                        
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">2</th>
+                                        <td>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole2" name="a2" value="3">
+                                            <label for="p2par3hole2">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole2" name="a2" value="4">
+                                            <label for="p2par4hole2">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole2" name="a2" value="5">
+                                            <label for="p2par5hole2">5</label>
+                                        </td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty2" type="number" min="1"> 
+                                        </td>
+                                      
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">3</th>
+                                        <td>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole3" name="a3" value="3">
+                                            <label for="p2par3hole3">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole3" name="a3" value="4">
+                                            <label for="p2par4hole3">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole3" name="a3" value="5">
+                                            <label for="p2par5hole3">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty3" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">4</th>
+                                        <td>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole4" name="a4" value="3">
+                                            <label for="p2par3hole4">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole4" name="a4" value="4">
+                                            <label for="p2par4hole4">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole4" name="a4" value="5">
+                                            <label for="p2par5hole4">5</label></td>
+                                        <td> 
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty4" type="number" min="1"> 
+                                            </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">5</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole5" name="a5" value="3">
+                                            <label for="p2par3hole5">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole5" name="a5" value="4">
+                                            <label for="p2par4hole5">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole5" name="a5" value="5">
+                                            <label for="p2par5hole5">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty5" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">6</th>
+                                        <td>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole6" name="a6" value="3">
+                                            <label for="p2par3hole6">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole6" name="a6" value="4">
+                                            <label for="p2par4hole6">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole6" name="a6" value="5">
+                                            <label for="p2par5hole6">5</label>
+                                        </td>
+                                        <td>  <input onblur="findTotal2()" class="score" name="qtyP2" id="qty6" type="number" min="1"> </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">7</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole7" name="a7" value="3">
+                                            <label for="p2par3hole7">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole7" name="a7" value="4">
+                                            <label for="p2par4hole7">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole7" name="a7" value="5">
+                                            <label for="p2par5hole7">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty7" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">8</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole8" name="a8" value="3">
+                                            <label for="p2par3hole8">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole8" name="a8" value="4">
+                                            <label for="p2par4hole8">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole8" name="a8" value="5">
+                                            <label for="p2par5hole8">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty8" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">9</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole9" name="a9" value="3">
+                                            <label for="p2par3hole9">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole9" name="a9" value="4">
+                                            <label for="p2par4hole9">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole9" name="a9" value="5">
+                                            <label for="p2par5hole9">5</label></td>
+                                        <td> 
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty9" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">10</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole10" name="a10" value="3">
+                                            <label for="p2par3hole10">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole10" name="a10" value="4">
+                                            <label for="p2par4hole10">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole10" name="a10" value="5">
+                                            <label for="p2par5hole10">5</label></td>
+                                        <td> 
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty10" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">11</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole11" name="a11" value="3">
+                                            <label for="p2par3hole11">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole11" name="a11" value="4">
+                                            <label for="p2par4hole11">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole11" name="a11" value="5">
+                                            <label for="p2par5hole11">5</label></td>
+                                        <td> 
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty11" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">12</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole12" name="a12" value="3">
+                                            <label for="p2par3hole12">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole12" name="a12" value="4">
+                                            <label for="p2par4hole12">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole12" name="a12" value="5">
+                                            <label for="p2par5hole12">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty12" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">13</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole13" name="a13" value="3">
+                                            <label for="p2par3hole13">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole13" name="a13" value="4">
+                                            <label for="p2par4hole13">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole13" name="a13" value="5">
+                                            <label for="p2par5hole13">5</label></td>
+                                        <td> 
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty13" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">14</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole14" name="a14" value="3">
+                                            <label for="p2par3hole14">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole14" name="a14" value="4">
+                                            <label for="p2par4hole14">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole14" name="a14" value="5">
+                                            <label for="p2par5hole14">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty14" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">15</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole15" name="a15" value="3">
+                                            <label for="p2par3hole15">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole15" name="a15" value="4">
+                                            <label for="p2par4hole15">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole15" name="a15" value="5">
+                                            <label for="p2par5hole15">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty15" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">16</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole16" name="a16" value="3">
+                                            <label for="p2par3hole16">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole16" name="a16" value="4">
+                                            <label for="p2par4hole16">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole16" name="a16" value="5">
+                                            <label for="p2par5hole16">5</label></td>
+                                        <td> 
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty16" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">17</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole17" name="a17" value="3">
+                                            <label for="p2par3hole17">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole17" name="a17" value="4">
+                                            <label for="p2par4hole17">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole17" name="a17" value="5">
+                                            <label for="p2par5hole17">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty17" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                      <tr>
+                                        <th scope="row">18</th>
+                                        <td><input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par3hole18" name="a18" value="3">
+                                            <label for="p2par3hole18">3</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par4hole18" name="a18" value="4">
+                                            <label for="p2par4hole18">4</label>
+                                            <input type="radio" onclick="displayRadioValue2()" class="r2"  id="p2par5hole18" name="a18" value="5">
+                                            <label for="p1par5hole18">5</label></td>
+                                        <td>  
+                                            <input onblur="findTotal2()" class="score" name="qtyP2" id="qty18" type="number" min="1"> 
+                                        </td>
+                                      </tr>
+            
+                                    </tbody>
+                                  </table>
+                               
+                               
+                                </div>
+                
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="col-12">
+                    <div class="card" id="footer">
+                        <div class="card-body" id="footer">
+                            <div class="container" id="scoreFooter">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h2 class="scoreboardHeading">Scores</h1>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p id="player1">Player 1:
+                                            <strong>
+                                                <span id=player1name></span>
+                                            </strong>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <p>Total:</p>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="text" name="total" id="total" disabled/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <p>Par:</p>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="text" name="total3" id="total3" disabled/>
+                                                <!-- <button type="button" onclick="displayRadioValue()"> 
+                                                    Submit  -->
+                                                </button> 
+                                                <div id="result"></div> 
+                                            </div>
+                                        </div>
+                                     
+                                    
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <p id="player2">Player 2:
+                                            <strong>
+                                                <span id=player2name></span>
+                                            </strong>
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <p>Total:</p>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="text" name="total2" id="total2" disabled/>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <p>Par:</p>
+                                            </div>
+                                            <div class="col-9">
+                                                <input type="text" name="total4" id="total4" disabled/>
+                                             
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                   
+                </div>
+
+                <!-- Ends footer -->
+
+                <!-- Input details -->
+                
+            </div>
+</div>
+     
+
+
+
+
+    <ul class="social">
+      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+  <div class="menu">
+    <ul>
+            <a class="nav-link" href="/">Home</a>
+            <% if(!currentUser) { %>
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Registrarse</a>
+            <% } else { %>
+            <a class="nav-link" href="/logout">Logout</a>
+            <% } %>
+    </ul>
+  </div>
+
+
+  <!-- BBUuTTOn -->
+  <!-- <div class="boton">
+    <span class="next" onclick="nextNum()"></span>
+    <span class="prev" onclick="prevNum()"></span>
+    <div id="box"></div>
+</div> -->
+
+        <footer class="text-black-50 mx-auto" style="display: flex;">
+            <p>&copy; Golf Scorecard 2021</p>
+        </footer>
+
+
+    </div>
+</section>
+
+<script type="text/javascript">
+    function findTotal(){
+        var arr = document.getElementsByName('qty');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+            if(parseInt(arr[i].value))
+                tot += parseInt(arr[i].value);
+        }
+        document.getElementById('total').value = tot;
+    }
+
+    function findTotal2(){
+        var arg = document.getElementsByName('qtyP2');
+        var tott=0;
+        for(var i=0;i<arg.length;i++){
+            if(parseInt(arg[i].value))
+                tott += parseInt(arg[i].value);
+        }
+        document.getElementById('total2').value = tott;
+    }
+
+
+    
+        </script>
+    
+    <script>
+
+        function displayRadioValue()
+        {
+                var score = 0;
+            var ele = document.getElementsByClassName('r1');
+        var result = document.getElementById("result");
+            for(i = 0; i < ele.length; i++) 
+        { 
+                        if(ele[i].checked)             score+=parseInt(ele[i].value)
+            }
+            // result.innerHTML = score;
+            document.getElementById('total3').value = score;
+               }
+        </script>
+    <script>
+
+        function displayRadioValue2()
+        {
+                var score = 0;
+            var ele = document.getElementsByClassName('r2');
+        var result = document.getElementById("result");
+            for(i = 0; i < ele.length; i++) 
+        { 
+                        if(ele[i].checked)             score+=parseInt(ele[i].value)
+            }
+            // result.innerHTML = score;
+            document.getElementById('total4').value = score;
+               }
+        </script>
+
+
+    <script src="/js/home.js"></script>
+    <script src="/js/golf.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+    <!-- <script src="/js/score.js"></script> -->
+    
+</body>
+
+</html>
